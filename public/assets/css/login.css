@@ -1,0 +1,108 @@
+/*login界面*/
+
+.ma a{
+    position: absolute;
+    right: 0;
+    top:0;
+}
+.icon {
+    margin: 30px 0;
+}
+
+.dl {
+    color: #666666;
+}
+
+.input {
+    margin: 30px 0;
+}
+
+.shuru {
+    width: 360px;
+    height: 36px;
+    border: none;
+}
+.username input{
+    border-bottom: 1px solid #666;
+}
+
+input::-webkit-input-placeholder {
+    color: #9C9C9C;
+    font-size: 18px;
+}
+.button{
+    margin-top: 50px;
+}
+.button input{
+    background-color: #33b4ff;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 4px;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 40px;
+}
+fieldset{
+    border-top:1px dashed #666666;
+    margin: 30px 0;
+}
+fieldset legend{
+    font-size: 14px;
+    color:#666666 ;
+}
+.i{
+    margin-bottom: 30px;
+}
+.i a{
+    background-color:#33b4ff ;
+
+}
+.zhuce a{
+    color:#666666;
+    font-size: 14px;
+}
+.dibu{
+   margin-top: 100px;
+    font-size: 14px;
+    color: #666666;
+
+}
+.zi{
+    margin: 16px 0;
+}
+
+/*ligin界面结束*/
+
+/*register*/
+
+.biaoti{
+color: #666666;
+    margin: 30px 0;
+    font-size: 22px;
+}
+.kuang input{
+    width: 360px;
+    height: 38px;
+    margin: 10px 0;
+}
+.kuang .shu{
+    border: 1px solid #9C9C9C;
+    border-radius: 10px;
+}
+.sub{
+    margin-top: 30px;
+}
+.sub input{
+    background-color: #33b4ff;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 4px;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 40px;
+    border: none;
+}
+.kuang p{
+    font-size: 14px;
+    color: #9d9d9d;
+}
