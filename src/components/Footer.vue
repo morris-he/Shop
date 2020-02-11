@@ -2,7 +2,7 @@
     <div class="footer">
         <ul>
             <li>
-                <router-link :to="{name:'home'}" class="on">
+                <router-link :to="{name:'home'}" active-class="on">
                     <div class="nav">
                         <div class="ih ispr"></div>
                         <p>商城</p>
@@ -18,12 +18,11 @@
                     </router-link>
             </li>
             <li>
-                <router-link :to="{name:'Cart'}">
+                <router-link :to="{name:'shopCart'}">
                     <div class="nav">
                         <div class="is ispr"></div>
                         <p>购物车</p>
                     </div>
-
                 </router-link>
             </li>
             <li>

@@ -13,7 +13,9 @@
                 </div>
 
                 <!-- Navbar -->
-                <CartCount></CartCount>
+                <div>
+                    <CartCount></CartCount>
+                </div>
 
             </div>
         </div>
@@ -32,6 +34,9 @@
         components: {
             CartCount,
             CartList
+        },
+        created() {
+            this.$store.dispatch('getAllCarts')
         },
     }
 </script>

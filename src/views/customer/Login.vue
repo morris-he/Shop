@@ -1,17 +1,12 @@
 <template>
 
     <div class="servicelogin">
-
-
         <div class="wrap">
                 <div class="title" align="center" style="font-size: 20px;font-weight: bold">
                     长乐账号登陆
                 </div>
-
-
             <div class="main" align="center">
                 <form v-on:submit.prevent="onSubmit">
-
                     <div class="login">
                         <div>
                             <input type="text" placeholder="请输入邮箱" class="email" v-model="customer.email">
@@ -25,7 +20,6 @@
                     </div>
                 </form>
             </div>
-
             <div class="other" align="center">
                 <div class="_register">
                     <router-link :to="{name: 'register'}"  class="registe">

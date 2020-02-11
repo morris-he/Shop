@@ -49,11 +49,16 @@
     import {mapState, mapActions} from 'vuex'
 
     export default {
-        created() {
-            this.$store.dispatch('getAllCarts')
+        computed: {
+            ...mapState([
+                'carts'
+            ])
         },
-        computed: mapState({
-            carts: state => state.carts
-        }),
+        methods:{
+            ...mapActions([
+                'changeNum',
+                'trash'
+            ])
+        }
     }
 </script>

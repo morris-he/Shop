@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         carts: [],
-        changing:false //   自定义一个点击变数值判断状态
+        changing:false //   自定义一个点击变数值判断状态(开关)
     },
     mutations: {
         setCarts(state, carts) {
@@ -21,16 +21,16 @@ export default new Vuex.Store({
             let index = state.carts.indexOf(payload.cart)
             state.carts.splice(index, 1)
         },
-
         changingStatus(state,status){
             state.changing = status
         }
-
     },
     actions: {
-        getAllCarts({commit}) {
+        getAllCarts(context) {
+            //请求之后  赋值
             axios.get("api/cart").then(response => {
-                commit('setCarts', response.data.carts)
+                //触发mutation
+                context.commit('setCarts', response.data.carts)
             })
         },
         changeNum({commit}, payload) {
@@ -42,7 +42,6 @@ export default new Vuex.Store({
             }
             // 方法一执行就变成真
             commit('changingStatus',true)
-
             axios.patch("api/cart", {cart_id: payload.cart.id, type: payload.type}).then((response) => {
                // 变换之后变成假
                 commit('changingStatus',false)
@@ -67,5 +66,4 @@ export default new Vuex.Store({
             return {num: num, price: price}
         }
     }
-
 })

@@ -20,13 +20,13 @@
                         <li class="ui-list-item">
                             <div class="label">所在地区：</div>
                             <div class="ui-input">
-                                <input placeholder="省 市 区" name="pca" id="pca" maxlength="20" type="text" v-model="address.pca">
+                                <input placeholder="省 市 区" name="pca" id="pca" maxlength="20" type="text" v-model="address.pca" @click="showDetail">
                             </div>
                         </li>
                         <li class="ui-list-item">
                             <div class="label">街道地址：</div>
-                            <div class="ui-input">
-                                <input placeholder="详细地址" name="address" maxlength="120" type="text" v-model="address.detail">
+                            <div class="ui-input" >
+                                <input placeholder="详细地址" name="address" maxlength="120" type="text" v-model="address.detail" >
                             </div>
                         </li>
                     </ul>
@@ -36,11 +36,11 @@
                 </div>
 
 
-                <div class="ui-mask" style="display:none;"></div>
-                <div class="ui-pop" style="display:none;">
+                <div class="ui-mask" v-if="show"></div>
+                <div class="ui-pop" v-if="show">
                     <div class="ui-pop-content">
                         <div class="region-list" id="city">
-
+                            <v-distpicker type="mobile" @selected="onSelected"></v-distpicker>
                         </div>
                     </div>
                     <div class="ui-pop-title">选择所在地区</div>
@@ -56,13 +56,17 @@
 
 
 <script>
-
+    import VDistpicker from 'v-distpicker'
 
     export default {
         name: 'addressCreate',
+        components: { VDistpicker },
         data() {
             return {
-                address: {}
+                address: {
+                    pca:''
+                },
+                show:false
             }
         },
         created(){
@@ -73,6 +77,14 @@
                     this.$router.push({name: 'Address'})
                 });
             },
+            onSelected(data) {
+                this.show=false
+                this.address.pca=data.province.value + ' ' + data.city.value + ' ' + data.area.value
+            },
+            showDetail(){
+                console.log(123456)
+                this.show=true
+            }
         }
     }
 </script>

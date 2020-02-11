@@ -8,15 +8,16 @@
                     <div class="list-wrap" id="m0" v-for="category in categories">
 
 
-                            <h3 class="list_title">{{category.name}}</h3>
+                        <h3 class="list_title">{{category.name}}</h3>
 
                         <ol class="list_category">
-                            <router-link  v-for="item in category.children" :to="{name:'productList',params:{id:item.id}}" >
-                            <li>
-                                <div class="img"><img :src="'http://images.canon4ever.com/' + item.image"></div>
-                                <div class="name"><span>{{item.name}}</span></div>
-                            </li>
-                        </router-link>
+                            <router-link v-for="item in category.children"
+                                         :to="{name:'productList',params:{id:item.id}}">
+                                <li>
+                                    <div class="img"><img :src="'http://images.canon4ever.com/' + item.image"></div>
+                                    <div class="name"><span>{{item.name}}</span></div>
+                                </li>
+                            </router-link>
                         </ol>
                     </div>
                 </div>

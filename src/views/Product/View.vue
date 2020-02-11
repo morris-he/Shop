@@ -48,7 +48,7 @@
                         <div class="ui-carousel-container">
                             <div class="ui-carousel-viewport" >
                                 <router-link :to="{name:'ProductView',params:{id:recommend.id}}" @click="shift_prd" v-for="recommend in recommends">
-                                    <img :src="'http://images.canon4ever.com/' + recommend.image"  >
+                                    <img :src="recommend.image?'http://images.canon4ever.com/' + recommend.image:''"  >
                                 </router-link>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
             buy(){
                 let id = this.$route.params.id
                 this.axios.post(`api/cart`, {product_id: id}).then((response) => {
-                    this.$router.push({name: 'Cart'})
+                    this.$router.push({name: 'shopCart'})
                 })
 
                 // this.axios.get('api/cart').then(res=>{

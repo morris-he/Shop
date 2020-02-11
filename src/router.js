@@ -14,7 +14,7 @@ import Register from './views/customer/Register.vue'  //登录
 import Address from './views/address/Address'
 import AddressCreate from './views/address/AddressCreate'
 
-import Cart from './views/cart/Home'
+// import Cart from './views/cart/Home'
 
 Vue.use(Router)
 Vue.use(VueRouter)
@@ -58,11 +58,11 @@ const router = new VueRouter({
             component: ShopCart
         },
 
-        {
-            path: '/cart',
-            name: 'Cart',
-            component: Cart
-        },
+        // {
+        //     path: '/cart',
+        //     name: 'Cart',
+        //     component: Cart
+        // },
         {
             path: '/checkOut',
             name: 'checkOut',
